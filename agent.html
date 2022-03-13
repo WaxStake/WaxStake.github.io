@@ -1,0 +1,1227 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="language" content="en">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAX CPU LOAN - waxcpu.net </title>
+
+    <link rel="canonical" href="agent.html">
+    <script src="js/wax.bloks.io.js"></script>
+    <link rel="stylesheet" href="releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="css?family=Oswald:400,300,700" rel='stylesheet' type='text/css'>
+    <script src='js/waxjs.js'></script>
+    <script src="js/tasktimer.min.js"></script>
+    <script src="jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css%20%281%29/bootstrap.min.css">
+    <link rel="stylesheet" href="css%20%281%29/style.css">
+
+</head>
+
+
+<body>
+    <div class="container">
+        <!DOCTYPE html>
+        <html>
+        <script src="jquery-3.6.0.min.js"></script>
+
+        <div id="checkstakemodal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+            aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle"> Staking </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Account</th>
+                                    <th scope="col">CPU</th>
+                                    <th scope="col">NET</th>
+                                    <th scope="col">Txid</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tablestakingonline">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="checktxmodal" class="modal fade modal-xl" tabindex="-1" role="dialog"
+            aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle"> History </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Stake Date</th>
+                                    <th scope="col">Account</th>
+                                    <th scope="col">Pay</th>
+                                    <th scope="col">Loan</th>
+                                    <th scope="col">Expire Date</th>
+                                    <th scope="col">Txid</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Event</th>
+                                </tr>
+                            </thead>
+                            <tbody id="hitorytx">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <body>
+            <div class="contrainer">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+
+                            <div class="col-4">
+                                <strong>Auto-login Feature</strong>
+                                <p style="color:#ef9d47" id="autologin" hidden=""></p>
+                                <h3>WAX Login : <span id="useragent" class="text-success"></span></h3>
+
+                                <button type="button" class="btn btn-info" id="login" onclick="login()">WAX
+                                    Login</button>
+
+                                <button type="button" class="btn btn-warning" data-toggle="modal"
+                                    data-target="#checktxmodal" id="checktrans" onclick="checktrans()">CHECK TX</button>
+
+                                <button type="button" class="btn btn-success" data-toggle="modal"
+                                    data-target="#checkstakemodal" id="checkstake" onclick="checkstake()">CHECK
+                                    ST</button>
+                            </div>
+
+                            <div class="col-8">
+                                <div class="row">
+                                    <p class="lead mb-2">Agent : bulthanit </p>
+                                    <p class="col-4">Rate : 1 : 100 W <input class="form-control" type="number"
+                                            id="rate" placeholder="Rate" value="100"></p>
+                                    <p class="col-6">Line Token : <input class="form-control" type="text" id="line"
+                                            placeholder="Line token" value="0"></p>
+
+                                </div>
+                                <div class="row">
+                                    <p class="col-4">Contact : ลิ้งสำหรับลูกค้าติดต่อ
+                                        <input class="form-control" type="text" id="contact"
+                                            placeholder="Line or Facebook link" value="0"></p>
+                                    <p class="col-2">Min.Day :
+                                        <input class="form-control" type="text" id="minday" placeholder="วันขั้นต่ำ"
+                                            value="1"></p>
+                                    <p class="col-2">Min.Wax :
+                                        <input class="form-control" type="text" id="minwax" placeholder="Waxขั้นต่ำ"
+                                            value="50"></p>
+                                    <div class="col-2 form-check text-success">
+                                        <label class="form-check-label ">
+                                            ONLINE
+                                            <input type="radio" class="form-check-input" name="optionsRadios"
+                                                id="optionsRadios1" value="1">
+                                        </label>
+                                        <label class=" form-check-label text-danger">
+                                            <input type="radio" class="form-check-input" name="optionsRadios"
+                                                id="optionsRadios2" value="2" checked="">
+                                            OFFLINE
+                                        </label>
+                                    </div>
+                                    <p class="col-2 text-danger">กดSaveด้วย<button type="button" class="btn btn-info"
+                                            id="savesetting" onclick="updateconfig()">SAVE</button></p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <p style="color:#ef9d47" id="loginresponse" hidden=""></p>
+                        <h2 class="text-center text-success"><strong id="textmode">Auto Staking Mode</strong></h2>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Setting Staking</label>
+                        <div class="form-check form-switch">
+                            <input onchange="checkstsw()" class="form-check-input text-success" type="checkbox"
+                                id="flexSwitchCheckChecked" checked="">
+                            <label class="form-check-label" for="flexSwitchCheckChecked"><strong id="status-sw"
+                                    class="text-success">ON</strong></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-3">
+                        <h2 id="free" class="text-success"><span id="freevalue">0</span> available</h2>
+                        <p>Account : <input class="form-control me-sm-2" type="text" id="account"
+                                placeholder='ex : 314xq.wam'></p>
+                        <p>Amount : <input class="form-control me-sm-2" type="text" id="amount" placeholder="ex : 1">
+                        </p>
+                        <p>Expire : <input class="form-control me-sm-2" type="datetime-local" id="expdate"></p>
+                        <button type="button" class="btn btn-outline-success" id="stake">Stake</button>
+                        <button type="button" class="btn btn-outline-danger" id="unstake">UnStake</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="autostaking()"
+                            hidden="">Test</button>
+                    </div>
+                    <div class="col-9">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Stake Date</th>
+                                    <th scope="col">Account</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Memo</th>
+                                    <th scope="col">Txid</th>
+                                </tr>
+                            </thead>
+                            <tbody id="txpending">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <hr>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Account</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Txid</th>
+                        </tr>
+                    </thead>
+                    <tbody id="response">
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                $("#stake").click(async function () {
+                    if ($("#amount").val() == '' || $("#account").val() == '' || $("#expdate").val() ==
+                        '') {
+                        alert('Input Account | Amount | Expire date')
+                    } else {
+                        console.log("manstake");
+                        let res = await muanstake();
+                        if (res.status == true) {
+                            let amount = $("#amount").val()
+                            let account = $("#account").val()
+                            amount = parseFloat(amount).toFixed(8) + ' WAX'
+                            let getexdate = $("#expdate").val()
+                            console.log(res.data.transaction_id)
+                            // todo
+                            let save = await savetxman(res.data.transaction_id, account,
+                                'Manual-Stake', amount, res.data.processed.block_time, getexdate);
+                            if (save.data.status == true) {
+                                console.log('save ok...')
+                            }
+
+                        }
+                    }
+
+
+                    // let save = await savetxman(tx,cw,ap,al,db,de);
+                });
+
+                $("#unstake").click(async function () {
+
+                    if ($("#amount").val() == '' || $("#account").val() == '') {
+                        alert('Input Account | Amount | Expire date')
+                    } else {
+                        console.log("manunstake");
+                        let res = await unstake();
+                        if (res.status == true) {
+                            console.log('man-unstake ok...')
+
+                        }
+                    }
+
+                });
+
+
+                // const linenotify = (message) => {
+
+                //     $.ajax({
+                //         type: "POST",
+                //         url: "/notify",
+                //         data: {
+                //             token: $("#line").val(),
+                //             detail: `${message}`
+                //         }
+                //     });
+
+                // }
+                const wax = new waxjs.WaxJS({
+                    rpcEndpoint: 'https://wax.greymass.com'
+                });
+
+                //automatically check for credentials
+                autoLogin();
+                const checkstsw = async () => {
+                    alert($("#status-sw").text())
+                    if ($("#status-sw").text() == 'ON') {
+                        $("#status-sw").html(`<strong id="status-sw" class="text-danger">OFF</strong>`)
+                        $("#textmode").html(
+                            `<strong class="text-center text-danger" id="textmode">Manual Staking Mode</strong>`
+                        )
+                    } else if ($("#status-sw").text() == 'OFF') {
+                        $("#status-sw").html(`<strong id="status-sw" class="text-success">ON</strong>`)
+                        $("#textmode").html(
+                            `<strong class="text-center text-success" id="textmode">Auto Staking Mode</strong>`
+                        )
+
+                    }
+                }
+                //checkstake();
+                const checktrans = async () => {
+                    let gettx = await fetch("/getalltx.txt");
+                    let argettx = await gettx.json();
+                    //todo
+                    
+                    alert('geytx   =  '+ gettx );
+                    alert('argettx =  '+ argettx );
+                    
+                    $("#hitorytx").html("")
+                    alert($("#hitorytx").html(""));
+
+                    for (i = 0; i < argettx.length; i++) {
+                        if (argettx[i].stake_txid == null) {
+                            let ap = parseFloat(argettx[i].amountpay.split("WAX")[0])
+                            let al = parseFloat(argettx[i].amountloan.split("WAX")[0])
+                            if (isNaN(ap)) {
+                                ap = argettx[i].amountpay
+                            } else {
+                                ap = ap.toFixed(4)
+                            }
+                            if (isNaN(al)) {
+                                al = argettx[i].amountloan
+                            } else {
+                                al = al.toFixed(4)
+                            }
+                            but =
+                                `<button class='clear_tx' id='${argettx[i].cusacc}_${argettx[i].amountloan}_${argettx[i].txid}'>Clear </button>`
+
+                            $("#hitorytx").append(`<tr class="table-warning">
+                    <th scope="row">${argettx[i].dateblock}</th>
+                    <td>${argettx[i].cusacc}</td>
+                    <td>${ap}</td>
+                    <td>${al}</td>
+                    <td>${argettx[i].dateexpire}</td>
+                    <td>Waiting Stake</td>
+                    <td>Waiting Stake</td>
+                    <td>${but}</td>
+                </tr>`)
+                        } else {
+                            if (argettx[i].status == 1) {
+                                st = 'OK'
+                                color = "success"
+                                but = " - "
+
+                            } else if (argettx[i].status == 9) {
+                                st = 'Deposit Owner'
+                                color = "success"
+                                but = " - "
+
+                            } else if (argettx[i].status == 2) {
+                                st = 'Expire'
+                                color = "danger"
+                                but =
+                                    `<button class='un_tx' id='${argettx[i].cusacc}_${argettx[i].amountloan}_${argettx[i].txid}'>Unstake </button> 
+                    <button class='clear_tx' id='${argettx[i].cusacc}_${argettx[i].amountloan}_${argettx[i].txid}'>Clear </button>`
+                            }
+                            // if (argettx[i].amountpay == 'Manual-Stake'){
+                            //     st = 'OK'
+                            //     color = "info"
+                            // }parseFloat("He was 40")
+                            let ap = parseFloat(argettx[i].amountpay.split("WAX")[0])
+                            let al = parseFloat(argettx[i].amountloan.split("WAX")[0])
+                            if (isNaN(ap)) {
+                                ap = argettx[i].amountpay
+                            } else {
+                                ap = ap.toFixed(4)
+                            }
+                            if (isNaN(al)) {
+                                al = argettx[i].amountloan
+                            } else {
+                                al = al.toFixed(4)
+                            }
+
+                            $("#hitorytx").append(`<tr class="table-${color}">
+                    <th scope="row">${argettx[i].dateblock}</th>
+                    <td>${argettx[i].cusacc}</td>
+                    <td>${ap}</td>
+                    <td>${al}</td>
+                    <td>${argettx[i].dateexpire}</td>
+                    <td><a class="text-danger" target="_blank" 
+                        href="https://wax.bloks.io/transaction/${argettx[i].stake_txid}">
+                        ${argettx[i].stake_txid.substring(0, 6)}</a></td>
+                        <td>${st}</td>
+                        <td>${but}</td>
+                    </tr>`)
+                        }
+
+                    }
+
+
+                    $(".un_tx").click(async function () {
+                        console.log($(this).attr('id'));
+                        let txid = $(this).attr('id').split("_")[2];
+                        let amount = $(this).attr('id').split("_")[1];
+                        let account = $(this).attr('id').split("_")[0];
+
+                        if (txid == '') {
+                            alert('Error Un...updateunstake')
+                        } else {
+                            console.log("oneclick_unstake");
+                            let res = await oneclickunstake(account, amount);
+                            console.log("oneclick_unstake : ");
+
+                            if (res.status == true) {
+                                $(this).parent().parent().remove();
+                                console.log('oneclick_unstake ok...')
+                                $.ajax({
+                                    url: "/updateunstake.txt",
+                                    type: "post",
+                                    async: false,
+                                    data: {
+                                        txid: txid,
+                                        status: 3, //un 0 to 3 
+
+                                    },
+                                    success: function (response) {
+
+                                        Swal.fire({
+                                            position: 'center',
+                                            icon: 'success',
+                                            title: 'Unstake Success !',
+                                            showConfirmButton: true,
+                                            // timer: 1500
+                                        })
+                                    },
+                                    error: function (jqXHR, textStatus, errorThrown) {}
+                                });
+                            }
+
+                        }
+
+                    });
+
+                    $(".clear_tx").click(async function () {
+                        console.log($(this).attr('id'));
+                        let txid = $(this).attr('id').split("_")[2];
+                        let amount = $(this).attr('id').split("_")[1];
+                        let account = $(this).attr('id').split("_")[0];
+
+                        if (txid == '') {
+                            alert('Error Un...clear')
+                        } else {
+
+                            console.log("oneclick_clear");
+                            $(this).parent().parent().remove();
+                            $.ajax({
+                                url: "/updateunstake.txt",
+                                type: "post",
+                                async: false,
+                                data: {
+                                    txid: txid,
+                                    status: 4, //clear 0 to 4 
+                                },
+                                success: function (response) {
+
+                                    Swal.fire({
+                                        position: 'center',
+                                        icon: 'success',
+                                        title: 'Clear Success !',
+                                        showConfirmButton: true,
+                                        // timer: 1500
+                                    })
+                                },
+                                error: function (jqXHR, textStatus, errorThrown) {}
+                            });
+
+                        }
+
+                    });
+
+                }
+                const checkstake = async () => {
+                    const res = await fetch("https://lightapi.eosamsterdam.net/api/accinfo/wax/" + wax
+                            .userAccount)
+                        .then(res => res.json()).then(json => {
+                            // console.log(json.delegated_to)
+                            let arrstaking = json.delegated_to
+                            $("#tablestakingonline").html("")
+                            arrstaking.forEach(element => {
+                                if (element.account_name == wax.userAccount) {
+                                    $("#tablestakingonline").prepend(`<tr class="table-info">
+                <th scope="row">Owner</th>
+                <th scope="row">${element.account_name}</th>
+                <td>${element.cpu_weight/100000000} WAX</td>
+                <td>${element.net_weight/100000000} WAX</td>
+                <td><a target="_blank" href="https://wax.bloks.io/account/${element.account_name}#staked-from">wax.block</a></td>
+                    </tr>`)
+
+                                } else {
+                                    $("#tablestakingonline").append(`<tr class="table-success">
+                <th scope="row">Customer</th>
+                <th scope="row">${element.account_name}</th>
+                <td>${element.cpu_weight/100000000} WAX</td>
+                <td>${element.net_weight/100000000} WAX</td>
+                <td><a target="_blank" href="https://wax.bloks.io/account/${element.account_name}#staked-to">wax.block</a></td>
+                    </tr>`)
+
+                                }
+
+                            });
+
+                        })
+                }
+                const checktxpending = async () => {
+                    let check = await fetch("https://wax.greymass.com/v1/history/get_actions", {
+                        body: JSON.stringify({
+                            account_name: wax.userAccount,
+                            pos: -1,
+                            offset: -20
+                        }),
+                        method: "POST"
+                    }).then(res => res.json()).then(json => {
+                        // console.log(json.actions)
+                        let arrapi = json.actions
+                        arrapi.forEach(element => {
+                            // console.log(element.action_trace.act.data.memo)
+                            if (element.action_trace.act.name == 'transfer' && element
+                                .action_trace.act.data.from != wax.userAccount && element
+                                .action_trace.act.data.memo.trim() != 'deposit') {
+                                // console.log(element.action_trace.act.data.memo)
+                                (async () => {
+                                    // console.log(element.action_trace.act.data.memo)
+                                    // console.log(element)
+                                    let ap = element.action_trace.act.data.quantity
+                                    let memo = element.action_trace.act.data.memo
+                                    if (isNaN(parseInt(memo))) {
+                                        memo = 1
+                                    }
+                                    rate = parseInt($("#rate").val());
+                                    let al = ((ap.split(" ")[0] * rate) / parseInt(
+                                        memo)).toFixed(8) + " WAX"
+                                    // console.log(al)
+                                    let svtx = await savetx(element.action_trace.trx_id,
+                                        element.action_trace.act.data.from,
+                                        ap,
+                                        al,
+                                        element.block_time)
+                                    if (svtx.data.status == true) {
+                                        linenotify(
+                                            `New Oreder >\nTxid : ${element.action_trace.trx_id}\nPay : ${ap}\nLoan : ${al}\nTime : ${element.block_time}`
+                                        )
+                                    }
+                                })()
+                            }
+                        });
+                    })
+
+                }
+                const autostaking = async () => {
+                    let gettx = await fetch("/gettx.txt");
+                    if (gettx.status == 204) {
+                        $("#txpending").html("")
+                        $("#txpending").append(`<tr class="table-warning">
+                <th scope="row">-</th>
+                <td>-</td>
+                <td>Waiting Order</td>
+                <td>-</td>
+                <td>-</a></td>
+            </tr>`)
+                        return;
+                    } else {
+                        let argettx = await gettx.json();
+                        let gettrans = await fetch("https://wax.greymass.com/v1/history/get_transaction", {
+                            body: JSON.stringify({
+                                id: argettx.txid,
+                                block_num_hint: 0,
+                            }),
+                            method: "POST"
+                        })
+                        let response = await gettrans.json()
+                        // console.log(response)
+                        $("#txpending").html("")
+                        counttx = (response.trx.trx.actions).length - 1
+                        acc = response.trx.trx.actions[counttx].data.from
+                        // amount = response.trx.trx.actions[1].data.quantity
+                        rate = parseInt($("#rate").val());
+                        amount = (response.trx.trx.actions[counttx].data.quantity.split(" ")[0] * rate)
+                        try {
+                            if (response.trx.trx.actions[counttx].data.memo.trim() == 'deposit') {
+                                numdate = 'deposit'
+                                amount = (0).toFixed(8) + " WAX"
+                            }
+                            if (response.trx.trx.actions[counttx].data.memo == '' || isNaN(parseInt(response.trx
+                                    .trx.actions[counttx].data.memo)) == true) {
+                                numdate = 1
+                                amount = (amount / numdate).toFixed(8) + " WAX"
+                            } else {
+                                numdate = parseInt(response.trx.trx.actions[counttx].data.memo)
+                                amount = (amount / numdate).toFixed(8) + " WAX"
+                            }
+
+                        } catch (err) {
+                            numdate = 1
+                        }
+                        if (numdate == 'deposit') {
+                            console.log('deposit owner');
+                            $.ajax({
+                                url: "/updatetx.txt",
+                                type: "post",
+                                async: false,
+                                data: {
+                                    txid: response.id,
+                                    stake_txid: '-',
+                                    day: 00000
+                                },
+                                success: function (response) {
+
+                                },
+                                error: function (jqXHR, textStatus, errorThrown) {
+
+                                }
+                            });
+                        } else {
+                            $("#txpending").append(`<tr class="table-warning">
+                <th scope="row">${response.block_time}</th>
+                <td>${acc}</td>
+                <td>${amount}</td>
+                <td>${numdate}</td>
+                <td><a class="text-danger" target="_blank" 
+                    href="https://wax.bloks.io/transaction/${response.id}">
+                    ${response.id.substring(0, 6)}</a></td>
+            </tr>`)
+                            // console.log(acc)
+                            // console.log(amount)
+                            if ($("#status-sw").text() == 'ON') {
+                                const penstaking = await stake(acc, amount)
+                                if (penstaking.status == true) {
+                                    console.log(penstaking.data.transaction_id);
+                                    // linenotify(`Staking OK >\nTxid : ${penstaking.data.transaction_id}\nWallet : ${acc}\nLoan : ${amount}\nTime : ${penstaking.data.block_time}`)
+
+                                    // console.log(`${response.id} : staking ok..`)
+                                    $("#txpending").html("")
+                                    $.ajax({
+                                        url: "/updatetx.txt",
+                                        type: "post",
+                                        async: false,
+                                        data: {
+                                            txid: response.id,
+                                            stake_txid: penstaking.data.transaction_id,
+                                            day: numdate
+                                        },
+                                        success: function (response) {
+
+                                        },
+                                        error: function (jqXHR, textStatus, errorThrown) {
+
+                                        }
+                                    });
+
+                                }
+                            } else {
+                                console.log(`Manual mode please staking.. : ${response.id}`)
+                            }
+                        }
+
+                    }
+
+                }
+                // Get trans
+                async function savetx(tx, cw, ap, al, db) {
+                    let data;
+                    $.ajax({
+                        url: "/savetx.txt",
+                        type: "post",
+                        async: false,
+                        data: {
+                            txid: tx,
+                            cusacc: cw,
+                            amountpay: ap,
+                            amountloan: al,
+                            dateblock: db
+                        },
+                        success: function (response) {
+
+                            data = response
+
+                            // You will get response from your PHP page (what you echo or print)
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            data = errorThrown
+                        }
+                    });
+                    return {
+                        data: data
+                    }
+
+                }
+
+                async function savetxman(tx, cw, ap, al, db, de) {
+                    let data;
+                    $.ajax({
+                        url: "/savetxman.txt",
+                        type: "post",
+                        async: false,
+                        data: {
+                            txid: tx,
+                            cusacc: cw,
+                            amountpay: ap,
+                            amountloan: al,
+                            dateblock: db,
+                            dateexpire: de
+                        },
+                        success: function (response) {
+
+                            data = response
+
+                            // You will get response from your PHP page (what you echo or print)
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            data = errorThrown
+                        }
+                    });
+                    return {
+                        data: data
+                    }
+
+                }
+
+                //checks if autologin is available 
+                async function autoLogin() {
+                    let isAutoLoginAvailable = await wax.isAutoLoginAvailable();
+                    if (isAutoLoginAvailable) {
+                        let userAccount = wax.userAccount;
+                        let pubKeys = wax.pubKeys;
+                        // let str = 'AutoLogin enabled for account: ' + userAccount + '<br/>Active: ' + pubKeys[0] + '<br/>Owner: ' + pubKeys[1]
+                        // document.getElementById('autologin').insertAdjacentHTML('beforeend', str);
+                        // document.getElementById('loginresponse').insertAdjacentHTML('beforeend', str);
+                        document.getElementById('useragent').insertAdjacentHTML('beforeend', userAccount);
+                        GetFreeSpace()
+                        updateconfig()
+                        checktxpending()
+                        linenotify(`Login success : ${wax.userAccount}`)
+                    } else {
+                        document.getElementById('autologin').insertAdjacentHTML('beforeend', 'Not auto-logged in');
+                    }
+                }
+
+                //normal login. Triggers a popup for non-whitelisted dapps
+                async function login() {
+                    try {
+                        //if autologged in, this simply returns the userAccount w/no popup
+                        let userAccount = await wax.login();
+                        let pubKeys = wax.pubKeys;
+                        // let str = 'Account: ' + userAccount + '<br/>Active: ' + pubKeys[0] + '<br/>Owner: ' + pubKeys[1]
+                        // document.getElementById('loginresponse').insertAdjacentHTML('beforeend', str);
+                        document.getElementById('useragent').insertAdjacentHTML('beforeend', userAccount);
+                        GetFreeSpace()
+                        updateconfig()
+                        checktxpending()
+                        linenotify(`Login success : ${wax.userAccount}`)
+                    } catch (e) {
+                        document.getElementById('useragent').append(e.message);
+                    }
+                }
+                async function stake(account, amount) {
+                    // let amount = $("#amount").val()
+                    // let account = $("#account").val()
+
+                    const config = {
+                        actions: [{
+                            account: 'eosio.token', //eosio
+                            name: 'delegatebw',
+                            authorization: [{
+                                actor: wax.userAccount,
+                                permission: 'active',
+                            }],
+                            data: {
+                                from: wax.userAccount,
+                                receiver: account,
+                                stake_net_quantity: '0.00000000 WAX',
+                                stake_cpu_quantity: amount,
+                                transfer: false,
+                                memo: `stake > ${account} : ${amount}`
+                            },
+                        }]
+                    }
+
+                    let ret = await sign(config);
+                    console.log(ret)
+                    if (ret.status == true) {
+                        GetFreeSpace()
+                        console.log(ret);
+                        let result = ret.data;
+                        $("#response").prepend(`<tr class="table-success">
+                <th scope="row">${result.processed.block_time}</th>
+                <td>${account}</td>
+                <td>${amount}</td>
+                <td><a class="text-danger" target="_blank"                 
+                    href="https://wax.bloks.io/transaction/${result.transaction_id}">
+                    ${result.transaction_id.substring(0, 6)}</a>
+                </td>
+            </tr>`)
+                        return {
+                            status: true,
+                            data: result
+                        };
+                    } else {
+                        console.log(ret);
+                        let result = ret.data;
+                        $("#response").prepend(`<tr class="table-danger">
+                <th scope="row">${new Date().toLocaleString()}</th>
+                <td>${result.json.error.code}</td>
+                <td>${result.json.message}</td>
+                <td>${result.message}</td>
+            </tr>`)
+
+                    }
+                }
+                async function muanstake() {
+                    let amount = $("#amount").val()
+                    let account = $("#account").val()
+                    amount = parseFloat(amount).toFixed(8)
+                    const config = {
+                        actions: [{
+                            account: 'eosio.token', //eosio',
+                            name: 'delegatebw',
+                            authorization: [{
+                                actor: wax.userAccount,
+                                permission: 'active',
+                            }],
+                            data: {
+                                from: wax.userAccount,
+                                receiver: account,
+                                stake_net_quantity: '0.00000000 WAX',
+                                stake_cpu_quantity: amount + ' WAX',
+                                transfer: false,
+                                memo: `stake > ${account} : ${amount}`
+                            },
+                        }]
+
+                    }
+
+                    let ret = await sign(config);
+                    if (ret.status == true) {
+                        GetFreeSpace()
+                        console.log(ret);
+                        let result = ret.data;
+                        $("#response").prepend(`<tr class="table-success">
+                <th scope="row">${result.processed.block_time}</th>
+                <td>${account}</td>
+                <td>${amount}</td>
+                <td><a class="text-danger" target="_blank"                 
+                    href="https://wax.bloks.io/transaction/${result.transaction_id}">
+                    ${result.transaction_id.substring(0, 6)}</a>
+                </td>
+            </tr>`)
+                        return {
+                            status: true,
+                            data: result
+                        };
+                    } else {
+                        console.log(ret);
+                        let result = ret.data;
+                        $("#response").prepend(`<tr class="table-danger">
+                <th scope="row">${new Date().toLocaleString()}</th>
+                <td>${result.json.error.code}</td>
+                <td>${result.json.message}</td>
+                <td>${result.message}</td>
+            </tr>`)
+
+                    }
+                }
+                async function unstake() {
+                    let amount = $("#amount").val()
+                    let account = $("#account").val()
+                    amount = parseFloat(amount).toFixed(8)
+                    const config = {
+                        actions: [{
+                            account: 'eosio.token', //eosio',
+                            name: 'undelegatebw',
+                            authorization: [{
+                                actor: wax.userAccount,
+                                permission: 'active',
+                            }],
+                            data: {
+                                from: wax.userAccount,
+                                receiver: account,
+                                unstake_net_quantity: '0.00000000 WAX',
+                                unstake_cpu_quantity: amount + ' WAX',
+                                transfer: false,
+                                memo: `unstake > ${account} : ${amount}`
+                            },
+                        }]
+
+                    }
+
+                    let ret = await sign(config);
+                    if (ret.status == true) {
+                        GetFreeSpace()
+                        console.log(ret);
+                        let result = ret.data;
+                        $("#response").prepend(`<tr class="table-warning">
+                <th scope="row">${result.processed.block_time}</th>
+                <td>${account}</td>
+                <td>${amount}</td>
+                <td><a class="text-danger" target="_blank"                 
+                    href="https://wax.bloks.io/transaction/${result.transaction_id}">
+                    ${result.transaction_id.substring(0, 6)}</a>
+                </td>
+            </tr>`)
+                        return {
+                            status: true,
+                            data: result
+                        };
+                    } else {
+                        console.log(ret);
+                        let result = ret.data;
+                        $("#response").prepend(`<tr class="table-danger">
+                <th scope="row">${new Date().toLocaleString()}</th>
+                <td>${result.json.error.code}</td>
+                <td>${result.json.message}</td>
+                <td>${result.message}</td>
+            </tr>`)
+
+                    }
+                }
+
+                async function oneclickunstake(account, amount) {
+                    // let amount = $("#amount").val()
+                    // let account = $("#account").val()
+                    amount = parseFloat(amount).toFixed(8)
+                    const config = {
+                        actions: [{
+                            account: 'eosio.token', //eosio
+                            name: 'undelegatebw',
+                            authorization: [{
+                                actor: wax.userAccount,
+                                permission: 'active',
+                            }],
+                            data: {
+                                from: wax.userAccount,
+                                receiver: account,
+                                unstake_net_quantity: '0.00000000 WAX',
+                                unstake_cpu_quantity: amount + ' WAX',
+                                transfer: false,
+                                memo: `unstake > ${account} : ${amount}`
+                            },
+                        }]
+
+                    }
+
+                    let ret = await sign(config);
+                    if (ret.status == true) {
+                        GetFreeSpace()
+                        console.log(ret);
+                        let result = ret.data;
+                        $("#response").prepend(`<tr class="table-warning">
+                <th scope="row">${result.processed.block_time}</th>
+                <td>${account}</td>
+                <td>${amount}</td>
+                <td><a class="text-danger" target="_blank"                 
+                    href="https://wax.bloks.io/transaction/${result.transaction_id}">
+                    ${result.transaction_id.substring(0, 6)}</a>
+                </td>
+            </tr>`)
+                        return {
+                            status: true,
+                            data: result
+                        };
+                    } else {
+                        console.log(ret);
+                        let result = ret.data;
+                        $("#response").prepend(`<tr class="table-danger">
+                <th scope="row">${new Date().toLocaleString()}</th>
+                <td>${result.json.error.code}</td>
+                <td>${result.json.message}</td>
+                <td>${result.message}</td>
+            </tr>`)
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'error',
+                            title: 'Error Unstake : ' + result.json.error.code,
+                            text: result.message,
+                            showConfirmButton: true,
+                            // timer: 1500
+                        })
+
+                        return {
+                            status: false,
+                            data: result
+                        };
+                    }
+                }
+
+                async function sign(config) {
+                    if (!wax.api) {
+                        return document.getElementById('response').append('* Login first *');
+                    }
+
+                    try {
+                        const result = await wax.api.transact(config, {
+                            blocksBehind: 3,
+                            expireSeconds: 10
+                        });
+                        await new Promise(resolve => setTimeout(resolve, 1000));
+                        // linenotify(`Login success : ${data}`)
+                        linenotify(
+                            `Transection OK >\nLink : https://wax.bloks.io/transaction/${result.transaction_id}`
+                        )
+                        return {
+                            status: true,
+                            data: result
+                        };
+
+
+                    } catch (e) {
+                        // const node = document.createElement("li");
+                        // const textnode = document.createTextNode(e.message);
+                        // node.appendChild(textnode);
+                        // document.getElementById("response").appendChild(node);
+                        // linenotify(`Failed >\nCode : ${result.json.error.code}\nText : ${result.json.message}\nMessage : ${result.message}`)
+                        linenotify(
+                            `Failed >\nCode : ${e.json.error.code}\nText : ${e.json.message}\nMessage : ${e.message}`
+                        )
+
+                        return {
+                            status: false,
+                            data: e
+                        };
+
+                    }
+                }
+
+
+                async function updateconfig() {
+                    //todo
+                    
+                    alert($('input[name="optionsRadios"]:checked').val());
+                    alert(userAccount,
+                            $("#rate").val(),
+                            $("#line").val(),
+                            $("#contact").val(),
+                            $("#minday").val(),
+                            $("#minwax").val());
+
+                    $.ajax({
+                        url: "/config.txt",
+                        type: "post",
+                        async: false,
+                        data: {
+                            wallet: wax.userAccount,
+                            rate: $("#rate").val(),
+                            linetoken: $("#line").val(),
+                            contact: $("#contact").val(),
+                            minday: $("#minday").val(),
+                            minwax: $("#minwax").val(),
+                            status: $('input[name="optionsRadios"]:checked').val(),
+                        },
+                      
+                        
+                        success: function (response) {
+                            agentonline()
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Update Success !',
+                                showConfirmButton: true,
+                                timer: 1500
+                            })
+
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {}
+                    });
+
+                }
+                async function GetFreeSpace() {
+                    var path = "https://wax.greymass.com/v1/chain/get_table_rows";
+                    var data = JSON.stringify({
+                        json: true,
+                        code: "eosio.token",
+                        scope: wax.userAccount,
+                        table: "accounts",
+                        lower_bound: "WAX",
+                        upper_bound: "WAX",
+                        limit: 1
+                    });
+                    const response = await fetch(path, {
+                        headers: {
+                            "Content-Type": "text/plain"
+                        },
+                        body: data,
+                        method: "POST"
+                    });
+                    const body = await response.json();
+                    console.log(body.rows[0].balance);
+                    document.getElementById("freevalue").innerHTML = `${body.rows[0].balance}`
+
+                }
+
+                async function agentonline() {
+                    let txtst = $('input[name="optionsRadios"]:checked').val();
+
+                    if (txtst == 1) {
+                        // console.log(txtst)
+                        if ($("#textmode").text() == 'Auto Staking Mode') { //id="textmode">Auto Staking Mode
+                            $.ajax({
+                                url: "/agentonline.txt",
+                                type: "post",
+                                data: {
+                                    status: txtst,
+                                },
+                                success: function (data, textStatus, xhr) {
+                                    // console.log(xhr.status)
+                                    if (data.status == false) {
+                                        window.location.href = '/users/logout'
+                                    } else if (data.status == undefined) {
+                                        window.location.href = '/agent'
+                                    }
+
+                                },
+                                error: function (jqXHR, textStatus, errorThrown) {
+                                    console.log(textStatus, errorThrown);
+                                    window.location.href = '/agent'
+                                }
+                            });
+                        } else {
+                            $.ajax({
+                                url: "/agentonline.txt",
+                                type: "post",
+                                data: {
+                                    status: 3,
+                                },
+                                success: function (data, textStatus, xhr) {
+                                    // console.log(xhr.status)
+                                    if (data.status == false) {
+                                        window.location.href = '/users/logout'
+                                    } else if (data.status == undefined) {
+                                        window.location.href = '/agent'
+                                    }
+
+                                },
+                                error: function (jqXHR, textStatus, errorThrown) {
+                                    console.log(textStatus, errorThrown);
+                                    window.location.href = '/agent'
+                                }
+                            });
+
+                        }
+
+                    } else {
+                        $.ajax({
+                            url: "/agentonline.txt",
+                            type: "post",
+                            data: {
+                                status: txtst,
+                            },
+                            success: function (data, textStatus, xhr) {
+                                // console.log(xhr.status)
+                                if (data.status == false) {
+                                    window.location.href = '/users/logout'
+                                } else if (data.status == undefined) {
+                                    window.location.href = '/agent'
+                                }
+
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                console.log(textStatus, errorThrown);
+                                window.location.href = '/agent'
+                            }
+                        });
+                    }
+                }
+
+
+                const {
+                    TaskTimer
+                } = tasktimer;
+
+                const timerMain = new TaskTimer(1000);
+                timerMain.add([{
+                        id: 'checktrans', // unique ID of the task
+                        // tickDelay: 1,       // 1 tick delay before first run
+                        tickInterval: 20, // run every 10 ticks (10 x interval = 10000 ms)
+                        totalRuns: 0, // run 2 times only. (set to 0 for unlimited times)
+                        callback(task) {
+                            // timerlogin.reset();
+                            console.log(`${task.id} task has run ${task.currentRuns} times.`);
+                            checktxpending();
+
+                        }
+                    },
+                    {
+                        id: 'autostaking', // unique ID of the task
+                        // tickDelay: 0,       // 1 tick delay before first run
+                        tickInterval: 30, // run every 10 ticks (10 x interval = 10000 ms)
+                        totalRuns: 0, // run 2 times only. (set to 0 for unlimited times)
+                        callback(task) {
+                            // timerlogin.reset();
+                            console.log(`${task.id} task has run ${task.currentRuns} times.`);
+                            autostaking();
+                        }
+                    },
+                    {
+                        id: 'agentonline', // unique ID of the task
+                        // tickDelay: 0,       // 1 tick delay before first run
+                        tickInterval: 60, // run every 10 ticks (10 x interval = 10000 ms)
+                        totalRuns: 0, // run 2 times only. (set to 0 for unlimited times)
+                        callback(task) {
+                            // timerlogin.reset();
+                            console.log(`${task.id} task has run ${task.currentRuns} times.`);
+                            GetFreeSpace()
+                            agentonline();
+                        }
+                    }
+
+
+                ]);
+                timerMain.start()
+            </script>
+        </body>
+
+        </html>
+        <hr>
+        <footer class="main-footer text-center">
+            <strong>Copyright © 2022 <a href="https://waxcpu.ne">WAXCPU.NET</a>.</strong>
+            All rights reserved.
+            <div class="float-right d-none d-sm-inline-block">
+                <b>Version</b> 2.0.1
+            </div>
+        </footer>
+        <hr>
+    </div>
+    <script src="jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    </script>
+    <script src="bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
+    <script src="npm/axios/dist/axios.min.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="fontawesome/v6.0.0/js/all.js" data-auto-replace-svg="nest"></script>
+    <script src="npm/sweetalert2%4011"></script>
+</body>
+
+</html>
+<script>
+
+</script>

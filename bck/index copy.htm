@@ -1,0 +1,70 @@
+﻿<!doctypehtml>
+    <html lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1024">
+    <meta name="keywords" content="wax,waxio,cpu,loan,eos,eosio,alienworlds,mining">
+    <title>CPU LOAN</title>
+    <link rel="stylesheet" href="style.css?v=1640766170">
+    <script src="waxjs.js"></script>
+    <script src="anchor-link%403.3.8/lib/anchor-link.bundle.js"></script>
+    <script src="anchor-link-browser-transport%403.2.5/lib/anchor-link-browser-transport.bundle.js"></script>
+
+    <body>
+        
+        <!--//todo  หน้าต่าง login -->
+        <div id="toast" style="visibility:hidden"></div>
+        <div id="walletlist" style="visibility:hidden">
+            <div><button class="close" onclick="WalletListVisible(!1)">x</button></div>
+            <div id="choose">Choose Wallet</div>
+            <div><button id="wcw" onclick='selectWallet("cloud")'>WAX Cloud Wallet</button></div>
+            <div><button id="anchor" onclick='selectWallet("anchor")'>Anchor</button></div>
+        </div>
+        
+        <!-- //todo ปุ่มปิด x หน้าต่าง wax -->
+        <div id="message" style="visibility:hidden">
+            <div><button class="close" onclick="HideMessage()">x</button></div>
+            <div id="messagecontent"></div>
+        </div>
+
+        <!--เริ่มแสดงผลหน้าเพจ-->
+        <div id="heading">CPU LOAN</div>
+                <div id="free">
+            <span id="note" style="display:none; color:red;">
+                - The rate of Plan1 is changed<br>
+                from 0.95 to 1.25<br>
+                - Add Plan5 (Loan 2 days)<br>
+                - Add Plan6 (Loan 3 days)<br>
+            </span>
+            <span id="freevalue">0</span> available
+            <span id="freeat" style="font-size:0.7em; color:lime;"></span>
+            <span id="totalpool" style="font-size:0.5em"><br>total</span>
+        </div>
+
+
+         <!--ปุ่ม login logout -->
+        <div id="loggedout" style="padding-top:10px;">
+            <button class="login" onclick="WalletListVisible(!0)">Login</button>
+        </div>
+
+        <div id="loggedin" style="display:none; padding-top:10px;">
+            <span id="accountname"></span>
+            <button class="logout" onclick="logout()">Logout</button>
+        </div>
+
+        <div id="pools"></div>
+        <div id="menu"></div>
+
+        <div id="links"><a href="#"><span class="__cf_email__"
+                    data-cfemail="056461686c6b45727d686c6b60772b666a68">[email&#160;protected]</span></a></div>
+        
+                    <div id="links"><a target="_blank"
+                href="https://wax.bloks.io/account/resourcemaxx">https://wax.bloks.io/account/resourcemaxx</a></div>
+
+
+        <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+        <script src="main.js?v=1645575284"></script>
+        
+       
+    </body>
+
+    </html>

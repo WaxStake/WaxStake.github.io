@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+<body>
+       <div id="loggedout" class="row">
+		   
+			<div class="col-3 m-auto">
+				 <p align=center> Username
+				  <br>
+				  <input type="userAccount" id="username" required>
+				</p>
+			</div>
+
+			<div class="col-3 m-auto">
+				<p align=center>Password (8 characters minimum):
+					<br>
+					<input type="password" id="pass" name="password"
+						   minlength="8" required>
+				</p>      
+			</div>
+		  <div>	   
+				<p align=center>
+				  <button class="login" onclick="login()">Submit</button>
+				</p>
+		  </div>
+    </body>        
+
+<script>
+
+        async function login() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("pass").value;
+             
+        if (username == '' || username == '-') {
+            alert("Please input username !")
+            return;
+          }
+        if (password == '' || password == '-') {
+            alert("Please input password !")
+            return;
+         }  
+        
+        if (username == 'admin' && password == '12345678')
+          {
+            alert('login ok')
+            window.location.href = "../agent.html";
+          } else {
+            alert("Unknown username or wrong password")
+          }
+      }
+</script>
+
+</html>
