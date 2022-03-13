@@ -1020,7 +1020,7 @@
 
                 // todo          up date con fig
                 async function updateconfig() {
-                                            
+                    alert("อัพเดต" + userAccount)                       
                     $.ajax({
                         url: "/config",
                         type: "post",
@@ -1049,7 +1049,7 @@
                         },
                         error: function (jqXHR, textStatus, errorThrown) {}
                     });
-                    alert("อัพเดต" + userAccount)
+                    
                 }
                 async function GetFreeSpace() {
                     
