@@ -253,25 +253,27 @@
                 });
 
 
-                // const linenotify = (message) => {
+                const linenotify = (message) => {
 
-                //     $.ajax({
-                //         type: "POST",
-                //         url: "/notify",
-                //         data: {
-                //             token: $("#line").val(),
-                //             detail: `${message}`
-                //         }
-                //     });
+                    $.ajax({
+                        type: "POST",
+                        url: "/notify",
+                        data: {
+                            token: $("#line").val(),
+                            detail: `${message}`
+                        }
+                    });
 
-                // }
+                }
+
+
                 const wax = new waxjs.WaxJS({
                     rpcEndpoint: 'https://wax.greymass.com'
                 });
 
+                
                 //automatically check for credentials
                 autoLogin();
-
                 alert("Auto Login");
   
                 const checkstsw = async () => {
@@ -290,8 +292,7 @@
                     }
                 }
                 //checkstake();
-                alert('geytx   =  '+ gettx );
-                alert('argettx =  '+ argettx );
+
                 const checktrans = async () => {
                  
                     let gettx = await fetch("/getalltx.txt");
