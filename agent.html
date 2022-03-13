@@ -1058,7 +1058,7 @@
 
                 }
                 async function GetFreeSpace() {
-                    alert("GET Free Space Function");
+                    
                     var path = "https://wax.greymass.com/v1/chain/get_table_rows";
                     var data = JSON.stringify({
                         json: true,
@@ -1079,7 +1079,7 @@
                     const body = await response.json();
                     console.log(body.rows[0].balance);
                     document.getElementById("freevalue").innerHTML = `${body.rows[0].balance}`
-
+                    alert("GET Free Space Function");
                 }
 
                 async function agentonline() {
