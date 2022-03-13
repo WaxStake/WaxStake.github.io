@@ -730,6 +730,7 @@
                 }
 
                 //normal login. Triggers a popup for non-whitelisted dapps
+
                 async function login() {
                     try {
                         //if autologged in, this simply returns the userAccount w/no popup
@@ -737,8 +738,10 @@
                         let pubKeys = wax.pubKeys;
                         // let str = 'Account: ' + userAccount + '<br/>Active: ' + pubKeys[0] + '<br/>Owner: ' + pubKeys[1]
                         // document.getElementById('loginresponse').insertAdjacentHTML('beforeend', str);
+                        
                         document.getElementById('useragent').insertAdjacentHTML('beforeend', userAccount);
                         GetFreeSpace()
+                        alert(userAccount)
                         updateconfig()
                         checktxpending()
                         linenotify(`Login success : ${wax.userAccount}`)
