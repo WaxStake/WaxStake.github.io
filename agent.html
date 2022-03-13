@@ -100,8 +100,9 @@
                             <div class="col-4">
                                 <strong>Auto-login Feature</strong>
                                 <p style="color:#ef9d47" id="autologin" hidden=""></p>
-                                <h3>WAX Login : <span id="useragent" class="text-success"></span></h3>
 
+                                <h3>WAX Login : <span id="useragent" class="text-success"></span></h3>
+                                <!--            todo                  -->
                                 <button type="button" class="btn btn-info" id="login" onclick="login()">WAX
                                     Login</button>
 
@@ -111,6 +112,7 @@
                                 <button type="button" class="btn btn-success" data-toggle="modal"
                                     data-target="#checkstakemodal" id="checkstake" onclick="checkstake()">CHECK
                                     ST</button>
+
                             </div>
 
                             <div class="col-8">
@@ -269,6 +271,9 @@
 
                 //automatically check for credentials
                 autoLogin();
+
+                alert("Auto Login");
+  
                 const checkstsw = async () => {
                     alert($("#status-sw").text())
                     if ($("#status-sw").text() == 'ON') {
@@ -1011,14 +1016,14 @@
 
                 async function updateconfig() {
                     //todo
-                    
+                    alert("up date con fig")
                     alert($('input[name="optionsRadios"]:checked').val());
-                    alert(userAccount,
-                            $("#rate").val(),
-                            $("#line").val(),
-                            $("#contact").val(),
-                            $("#minday").val(),
-                            $("#minwax").val());
+                    alert(userAccount+
+                            +$("#rate").val(),
+                            +$("#line").val(),
+                            +$("#contact").val(),
+                            +$("#minday").val(),
+                            +$("#minwax").val());
 
                     $.ajax({
                         url: "/config.txt",
