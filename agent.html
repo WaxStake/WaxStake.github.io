@@ -1020,10 +1020,7 @@
 
                 // todo          up date con fig
                 async function updateconfig() {
-                    
-                    alert("อัพเดต" + userAccount)
-                            
-
+                                            
                     $.ajax({
                         url: "/config",
                         type: "post",
@@ -1038,7 +1035,7 @@
                             status: $('input[name="optionsRadios"]:checked').val(),
                         },
                       
-                        
+                                            
                         success: function (response) {
                             agentonline()
                             Swal.fire({
@@ -1052,7 +1049,7 @@
                         },
                         error: function (jqXHR, textStatus, errorThrown) {}
                     });
-
+                    alert("อัพเดต" + userAccount)
                 }
                 async function GetFreeSpace() {
                     
