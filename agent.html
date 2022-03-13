@@ -1023,6 +1023,7 @@
                     //todo
                     alert("up date con fig")
                     alert($('input[name="optionsRadios"]:checked').val());
+                    
                     alert(userAccount)
                             
 
@@ -1057,6 +1058,7 @@
 
                 }
                 async function GetFreeSpace() {
+                    alert("GET Free Space Function")
                     var path = "https://wax.greymass.com/v1/chain/get_table_rows";
                     var data = JSON.stringify({
                         json: true,
