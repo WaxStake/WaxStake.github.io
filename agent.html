@@ -290,14 +290,15 @@
                     }
                 }
                 //checkstake();
+                alert('geytx   =  '+ gettx );
+                alert('argettx =  '+ argettx );
                 const checktrans = async () => {
+                 
                     let gettx = await fetch("/getalltx.txt");
                     let argettx = await gettx.json();
                     //todo
                     
-                    alert('geytx   =  '+ gettx );
-                    alert('argettx =  '+ argettx );
-                    
+                                
                     $("#hitorytx").html("")
                     alert($("#hitorytx").html(""));
 
