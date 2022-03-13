@@ -1020,15 +1020,11 @@
                     //todo
                     alert("up date con fig")
                     alert($('input[name="optionsRadios"]:checked').val());
-                    alert(userAccount+
-                            +$("#rate").val(),
-                            +$("#line").val(),
-                            +$("#contact").val(),
-                            +$("#minday").val(),
-                            +$("#minwax").val());
+                    alert(userAccount)
+                            
 
                     $.ajax({
-                        url: "/config.txt",
+                        url: "/config",
                         type: "post",
                         async: false,
                         data: {
