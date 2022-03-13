@@ -1020,7 +1020,7 @@
 
                 // todo          up date con fig
                 async function updateconfig() {
-                    alert("อัพเดต")                       
+                                         
                     $.ajax({
                         url: "/config",
                         type: "post",
@@ -1032,10 +1032,8 @@
                             contact: $("#contact").val(),
                             minday: $("#minday").val(),
                             minwax: $("#minwax").val(),
-                            status: $('input[name="optionsRadios"]:checked').val(),
+                            status: $('input[name="optionsRadios"]:checked').val()
                         },
-                      
-                                            
                         success: function (response) {
                             agentonline()
                             Swal.fire({
@@ -1074,7 +1072,7 @@
                     console.log(body.rows[0].balance);
                     document.getElementById("freevalue").innerHTML = `${body.rows[0].balance}`
                     
-                    alert("GET Free Space Function อะไรวะ");
+                    alert("GET Free Space Function อะไรวะ" + userAccount);
                 }
 
                 async function agentonline() {
