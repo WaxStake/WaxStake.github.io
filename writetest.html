@@ -1,0 +1,20 @@
+<html>
+</header> "Content-Type: text/plain" </header>
+<script type="text/javascript" src="jquery-3.3.1.slim.min.js"></script>
+
+<script>
+    function write(){
+        $.ajax({
+        type: 'POST',
+        url: "config.txt",
+        data: "something",
+        success: function(result) {
+            console.log('the data was successfully sent to the server');
+        }
+        })
+    }
+</script>
+
+Click to write some stuff
+<a href="javascript:write()" class="write">Write</a>
+</html>

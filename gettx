@@ -1,0 +1,13 @@
+{
+    "status": 9,
+    "stake_txid": null,
+    "_id": "62249d3a2793eb3df077856c",
+    "agentuser": "bulthanit",
+    "cusacc": "nftpandawofg",
+    "amountpay": "0.0721 BAM",
+    "amountloan": "7.21000000 WAX",
+    "txid": "e825b1f4c669fd066f3e8113b4c8fde6c42918925323652c3f17fee9493d6c04",
+    "dateblock": "2022-03-06T03:19:20.500Z",
+    "dateexpire": "2022-03-06T11:38:34.906Z",
+    "__v": 0
+}

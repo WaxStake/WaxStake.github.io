@@ -1,0 +1,49 @@
+[{
+    "status":9,
+    "stake_txid": "495b1e0f2c5e0c8d49e2ad374cd5875920f8f90cea0570de572dfb5f8bc6685d",
+    "_id": "62249d3a2793eb3df077856c",
+    "agentuser": "bulthanit",
+    "cusacc": "nftpandawofg",
+    "amountpay": "0.0721 BAM",
+    "amountloan": "7.21000000 WAX",
+    "txid": "495b1e0f2c5e0c8d49e2ad374cd5875920f8f90cea0570de572dfb5f8bc6685d",
+    "dateblock": "2022-03-06T03:19:20.500Z",
+    "dateexpire": "2022-03-06T11:38:34.906Z",
+    "__v": 0
+}, {
+    "status":9,
+    "stake_txid": null,
+    "_id": "62249d3a2793eb3df077856d",
+    "agentuser": "bulthanit",
+    "cusacc": "nftpandawofg",
+    "amountpay": "0.0412 BAM",
+    "amountloan": "4.12000000 WAX",
+    "txid": "495b1e0f2c5e0c8d49e2ad374cd5875920f8f90cea0570de572dfb5f8bc6685d",
+    "dateblock": "2022-03-06T03:22:08.500Z",
+    "dateexpire": "2022-03-06T11:38:34.978Z",
+    "__v": 0
+}, {
+    "status": 9,
+    "stake_txid": null,
+    "_id": "62249d3b2793eb3df077856e",
+    "agentuser": "bulthanit",
+    "cusacc": "nftpandawofg",
+    "amountpay": "0.0412 BAM",
+    "amountloan": "4.12000000 WAX",
+    "txid": "1919391d738f03e216aa70af79340040556d3110db219f0ac5d92680bbc83b81",
+    "dateblock": "2022-03-06T03:24:44.000Z",
+    "dateexpire": "2022-03-06T11:38:35.043Z",
+    "__v": 0
+}, {
+    "status": 9,
+    "stake_txid": null,
+    "_id": "62249d3b2793eb3df077856f",
+    "agentuser": "bulthanit",
+    "cusacc": "nftpandawofg",
+    "amountpay": "0.0253 BAM",
+    "amountloan": "2.53000000 WAX",
+    "txid": "05960f9ebcab418c0190a1a419dc486a9063b093c6f1bdf68939db7db018ce3d",
+    "dateblock": "2022-03-06T03:28:46.000Z",
+    "dateexpire": "2022-03-06T11:38:35.111Z",
+    "__v": 0
+}]
